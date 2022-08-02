@@ -29,6 +29,15 @@ class library{
             }
         };
     };
-    updateBookById();
+    updateBookById(id,info){
+        const newBook = this.books.map( book =>{
+            if(this.books.id === id){
+                this.books.title = info.title;
+                this.books.description = info.description;
+                this.books.author = info.author;
+            }
+        })
+        return newBook;
+    };
 
 }
