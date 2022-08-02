@@ -3,6 +3,7 @@ class book{
         this.title = title;
         this.description = description;
         this.author = author;
+        this.id = id;
     }
 }
 
@@ -16,9 +17,18 @@ class library{
     addBook(bookInfo){
         const newBook = new book(bookInfo);
         this.books.push(newBook);
+        return newBook
     };
-    removeBookById();
-    getBookById();
+    removeBookById(id){
+        this.books.splice(id,1);
+    };
+    getBookById(id){
+        for(var i= 0 ; i < this.books.length - 1; i++){
+            if(this.books[i].id === id){
+                return this.books[i]
+            }
+        };
+    };
     updateBookById();
 
 }
