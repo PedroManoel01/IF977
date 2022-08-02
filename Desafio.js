@@ -30,13 +30,15 @@ class library{
         };
     };
     updateBookById(id,info){
-        const newBook = this.books.map( book =>{
-            if(this.books.id === id){
-                this.books.title = info.title;
-                this.books.description = info.description;
-                this.books.author = info.author;
+        for(const book of this.books){
+            if(book.id === id){
+                book.title = info.title;
+                book.description = info.description;
+                book.author = info.author;
+
+                break;
             }
-        })
+        }
         return newBook;
     };
 
